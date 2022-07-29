@@ -7,7 +7,9 @@ export const greeting = async () => {
     input,
     output,
   });
-  console.log(`Welcome to the File Manager, ${enteredUserName}!`);
+  console.log(`Welcome to the File Manager, ${enteredUserName}!`);  
 
-  rl.close();
+  rl.on('close', () => {
+    console.log(`Thank you for using File Manager, ${enteredUserName}`);
+  });
 }
